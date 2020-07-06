@@ -3,7 +3,7 @@
 Demonstrate pull to refresh in Flutter
 
 ## Tutorial
-Check this out at https://medium.com/@kolonel.yudisetiawan/flutter-pull-to-refresh-d4e989403b1e
+Check out my tutorial at https://medium.com/@kolonel.yudisetiawan/flutter-pull-to-refresh-d4e989403b1e
 
 ## Output
 
