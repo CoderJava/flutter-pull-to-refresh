@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(App());
@@ -34,7 +35,29 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Demo Pull To Refresh'),
       ),
-      body: Platform.isIOS ? Container() : _buildWidgetListDataAndroid(),
+      body: Platform.isIOS ? _buildWidgetListDataIOS() : _buildWidgetListDataAndroid(),
+    );
+  }
+
+  Widget _buildWidgetListDataIOS() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: CustomScrollView(
+        slivers: [
+          CupertinoSliverRefreshControl(
+            onRefresh: refreshData,
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                var user = listData[index];
+                return _buildWidgetItemListData(user, context);
+              },
+              childCount: listData.length
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -45,23 +68,27 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.all(16),
         itemBuilder: (context, index) {
           var user = listData[index];
-          return Card(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(user.nama),
-                  Text(
-                    '${user.nomor}',
-                    style: Theme.of(context).textTheme.caption,
-                  ),
-                ],
-              ),
-            ),
-          );
+          return _buildWidgetItemListData(user, context);
         },
         itemCount: listData.length,
+      ),
+    );
+  }
+
+  Widget _buildWidgetItemListData(User user, BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(user.nama),
+            Text(
+              '${user.nomor}',
+              style: Theme.of(context).textTheme.caption,
+            ),
+          ],
+        ),
       ),
     );
   }
