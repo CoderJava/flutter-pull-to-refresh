@@ -1,16 +1,12 @@
-# flutterpulltorefresh
+# Flutter Pull To Refresh (Swipe To Refresh)
 
 Demonstrate pull to refresh in Flutter
 
-## Getting Started
+## Tutorial
+Check this out at https://medium.com/@kolonel.yudisetiawan/flutter-pull-to-refresh-d4e989403b1e
 
-This project is a starting point for a Flutter application.
+## Output
 
-A few resources to get you started if this is your first Flutter project:
+![Android](https://thumbs.gfycat.com/TidyGrouchyIcterinewarbler-size_restricted.gif "Android")
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![IOS](https://thumbs.gfycat.com/BoringBlondAsiansmallclawedotter-size_restricted.gif "IOS")
